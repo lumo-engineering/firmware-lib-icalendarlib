@@ -100,4 +100,10 @@ inline AlarmAction ConvertAlarmAction(string Name) {
 	return DISPLAY;
 }
 
+extern "C" {
+  size_t timestamp_s_to_icalendarlib_str(const time_t epoch_time_s, char *date);
+  time_t icalendarlib_str_to_timestamp_s(const char *ical_date);
+  bool is_timestamp_s_within_any_event(const char *calendar_path, const time_t epoch_time_s);
+}
+
 #endif // _ICALENDAR_H
