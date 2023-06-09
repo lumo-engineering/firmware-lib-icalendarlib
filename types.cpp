@@ -79,7 +79,7 @@ Alarm::operator string() const {
 	Text += "\r\nACTION:";
 	switch (Action) {
 		case AUDIO: Text += "AUDIO"; break;
-		case DISPLAY: Text += "DISPLAY"; break;
+		case DISPLAY_: Text += "DISPLAY"; break;
 		case PROCEDURE: Text += "PROCEDURE"; break;
 		case EMAIL: Text += "EMAIL"; break;
 	}

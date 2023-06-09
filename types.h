@@ -16,7 +16,7 @@ struct DeleteItem {
 // Custom data types
 
 typedef enum { VCALENDAR, VEVENT, VALARM } Component;
-typedef enum { DISPLAY=0, PROCEDURE, AUDIO, EMAIL } AlarmAction;
+typedef enum { DISPLAY_=0, PROCEDURE, AUDIO, EMAIL } AlarmAction;
 
 struct Recurrence {
 	Recurrence(): Freq(YEAR), Interval(0), Count(0), WeekStart(SU) {}
@@ -42,7 +42,7 @@ struct AlarmTrigger {
 };
 
 struct Alarm {
-	Alarm(): Active(false), Action(DISPLAY) {}
+	Alarm(): Active(false), Action(DISPLAY_) {}
 	operator string() const;
 	void Clear() {
 		Description.clear();

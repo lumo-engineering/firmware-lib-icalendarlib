@@ -97,7 +97,7 @@ inline AlarmAction ConvertAlarmAction(string Name) {
 	if (Name == "EMAIL")
 		return EMAIL;
 	
-	return DISPLAY;
+	return DISPLAY_;
 }
 
 #endif // _ICALENDAR_H

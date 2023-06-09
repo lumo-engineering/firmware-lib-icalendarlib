@@ -4,7 +4,7 @@
 size_t icalendarlib_timestamp_s_to_str(const time_t timestamp_s, char *icalendarlib_str)
 {
   time_t t = timestamp_s;
-  struct tm *tm = gmtime(&t);
+  struct tm *tm = localtime(&t);
   size_t n = strftime(icalendarlib_str, 16, "%Y%m%dT%H%M%S", tm);
   icalendarlib_str[n] = 0;
   return n;
@@ -14,7 +14,7 @@ time_t icalendarlib_str_to_timestamp_s(const char *ical_date)
 {
   struct tm tm = {0};
   strptime(ical_date, "%Y/%m/%d %H:%M", &tm);
-  return timegm(&tm);
+  return mktime(&tm);
 }
 
 bool icalendarlib_is_timestamp_s_within_any_event(const char *calendar_path, const time_t timestamp_s)
